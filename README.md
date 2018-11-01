@@ -1,5 +1,5 @@
 Available via [clojars](http://clojars.org/search?q=lein-midje)    
-Production version: 3.2.1 (requires Midje 1.5 or later)
+Production version: 3.2.2 (requires Midje 1.5 or later)
 
 Purpose
 ==========

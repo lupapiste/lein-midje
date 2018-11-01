@@ -1,6 +1,6 @@
-(defproject lein-midje/lein-midje "3.2.1"
+(defproject lupapiste/lein-midje "3.2.2"
   :description "Run Midje and clojure.test tests"
-  :url "https://github.com/marick/lein-midje"
+  :url "https://github.com/lupapiste/lein-midje"
   :author "See README"
   :pedantic? :warn
   :eval-in-leiningen true
