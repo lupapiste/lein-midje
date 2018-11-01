@@ -20,9 +20,13 @@
                         (= (:eval-in project) :leiningen))
                   `main/exit
                   `System/exit)]
-    `(let [failures# (:failures (midje.repl/load-facts ~@true-namespaces
-                                                       ~@(repl-style-filters filters)))]
-       (~exit-fn (min 255 failures#)))))
+    `(let [exit-code# (try
+                        (:failures (midje.repl/load-facts ~@true-namespaces
+                                                          ~@(repl-style-filters filters)))
+                        (catch Exception e#
+                          (.printStackTrace e#)
+                          1))]
+       (~exit-fn (min 255 exit-code#)))))
 
 (defn make-autotest-form [dirs filters]
   ;; Note: filters with an empty arglist means "use the default".
